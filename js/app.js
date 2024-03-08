@@ -31,17 +31,22 @@ for (let i = 0; i < imageArray.length; i++) {
 
 
 const divItemList = document.getElementsByClassName('item');
-// console.log(divItemList[0]);
-const firstItem = divItemList[0];
+
 let activeItemI = 0;
+const firstItem = divItemList[activeItemI];
 firstItem.classList.add('active')
 
-const nextItemDOMElement = document.getElementsByClassName('next');
+const nextDOMElement = document.querySelector('.next');
 
-nextItemDOMElement.addEventListner ('click', function () {
 
-activeItemI++;
+
+nextDOMElement.addEventListner('click', function () {
     
+    console.log('click');
+   
+
+    
+
 })
 
 
