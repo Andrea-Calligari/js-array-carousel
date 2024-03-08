@@ -12,18 +12,18 @@ img{
 }
 .container{
     height: 100vh;
-    position: relative;
+    /* position: relative; */
 }
 .slider{
     width: 50vw;
     top: 50%;
     left: 50%;
-    position: absolute;
+     position: absolute; 
     transform: translate(-50%, -50%);
 }
 
 
-.item-container{
+.items-container{
     /* ?????? */
     width: 100%;
     /* ?????? */
