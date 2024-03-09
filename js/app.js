@@ -51,9 +51,21 @@ nextDOMElement.addEventListener('click', function () {
     divItemList[activeItemI].classList.add('active');
 
 
-    console.log(activeItemI)
+    console.log(activeItemI);
 
 
+});
+
+const prevDOMElement = document.querySelector('.prev');
+
+prevDOMElement.addEventListener('click', function(){
+    
+    divItemList[activeItemI].classList.remove('active');
+
+    activeItemI--;
+
+    divItemList[activeItemI].classList.add('active');
+    
 })
 
 
