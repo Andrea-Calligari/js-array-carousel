@@ -14,7 +14,7 @@ const itemsContainerDOMElement = document.querySelector('.items-container');
 // console.log(nextItemDOMElement)
 
 for (let i = 0; i < imageArray.length; i++) {
-    // console.log(imageArray[i])
+    console.log(imageArray[i])
     const imgPath = imageArray[i];
 
     const itemSliderHTML = `
@@ -23,7 +23,7 @@ for (let i = 0; i < imageArray.length; i++) {
      </div>
 
     `;
-    // console.log(itemContainerHTML, imgPath)
+    // console.log(itemsContainerDOMElement, imgPath)
 
     itemsContainerDOMElement.innerHTML += itemSliderHTML;
 
@@ -34,20 +34,30 @@ const divItemList = document.getElementsByClassName('item');
 
 let activeItemI = 0;
 const firstItem = divItemList[activeItemI];
-firstItem.classList.add('active')
+firstItem.classList.add('active');
 
 const nextDOMElement = document.querySelector('.next');
 
 
+// console.log(divItemList)
 
-nextDOMElement.addEventListner('click', function () {
-    
-    console.log('click');
-   
+nextDOMElement.addEventListener('click', function () {
 
-    
+
+    divItemList[activeItemI].classList.remove('active');
+
+    activeItemI++
+
+    divItemList[activeItemI].classList.add('active');
+
+
+    console.log(activeItemI)
+
 
 })
+
+
+
 
 
 
