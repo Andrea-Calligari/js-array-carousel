@@ -28,43 +28,56 @@ for (let i = 0; i < imageArray.length; i++) {
     itemsContainerDOMElement.innerHTML += itemSliderHTML;
 
 }
-
+console.log(itemsContainerDOMElement)
 
 const divItemList = document.getElementsByClassName('item');
 
 let activeItemI = 0;
 const firstItem = divItemList[activeItemI];
 firstItem.classList.add('active');
-
+const lastItem = imageArray.length -1;
 const nextDOMElement = document.querySelector('.next');
-
+const prevDOMElement = document.querySelector('.prev');
 
 // console.log(divItemList)
 
 nextDOMElement.addEventListener('click', function () {
 
-
+    
     divItemList[activeItemI].classList.remove('active');
-
-    activeItemI++
-
-    divItemList[activeItemI].classList.add('active');
-
-
-    console.log(activeItemI);
+    
+    if(activeItemI < lastItem){
+        activeItemI++
+        divItemList[activeItemI].classList.add('active');
+       
+    }else{
+        activeItemI = 0;
+        divItemList[activeItemI].classList.add('active');
+        
+    }
+    
+    
+    
+        console.log(activeItemI);
 
 
 });
 
-const prevDOMElement = document.querySelector('.prev');
-
 prevDOMElement.addEventListener('click', function(){
-    
     divItemList[activeItemI].classList.remove('active');
-
+    
+    if(activeItemI > 0){
     activeItemI--;
-
     divItemList[activeItemI].classList.add('active');
+
+    }else{
+        activeItemI = lastItem;
+        divItemList[activeItemI].classList.add('active');
+    }
+    console.log(activeItemI);
+    
+    
+
     
 })
 
